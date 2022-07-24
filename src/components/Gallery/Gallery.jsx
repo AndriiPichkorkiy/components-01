@@ -1,24 +1,20 @@
-import { Marker } from "components/App"
-import styled from "styled-components"
-
-
+import { Button, Ul, Item, Marker } from "./Gallery.styles"
 
 export default function Gallery({ logout, pictures = [] }) {
 
     return <>
-        <button type="button" onClick={logout}>Close</button>
-        <ul>{pictures?.map(({id,previewURL}) => {
-        
-            return <Item key={id}><Marker isDone="land"></Marker><img src={previewURL} alt={previewURL} /></Item>
+        <Button type="button" onClick={logout}>Close</Button>
+        <Ul>{pictures?.map(({id,previewURL}) => {
+            return <Item key={id}>
+                <Marker isDone="land">
+                    <img src={previewURL} alt={previewURL}/>
+                </Marker>
+                
+            </Item>
         }  
         )}
-      </ul></>
-
+      </Ul></>
 };
 
-const Item = styled.li`
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-`
+
 

@@ -1,7 +1,7 @@
 import { Component, Fragment } from 'react';
 import Gallery from './Gallery/Gallery';
 import { getImages } from 'services/pixabyApi';
-import styled from 'styled-components';
+
 
 class App extends Component {
   state = {
@@ -64,20 +64,6 @@ class App extends Component {
   }
 }
 
-export const Marker = styled.div`
-  /* display: block;
-  width: 100px;
-  height: 100px;
-  color: blue;
-  background-color: red; */
-  /* background-color: ${({ is }) => (is ? 'green' : 'red')}; */
-  width: 50px;
-  height: 50px;
-  border-radius: 25px;
-  background-color: ${({ isDone }) => {
-    console.log(isDone);
-    return isDone ? 'green' : 'red';
-  }};
-`;
+
 
 export default App;
