@@ -8,7 +8,7 @@ class App extends Component {
     images: [],
   };
 
-  hendelLogin = async event => {
+  handlerLogin = async event => {
     event.preventDefault();
     // this.setState(preState => ({
     //   isLogedIn: !preState.isLogedIn,
@@ -24,25 +24,25 @@ class App extends Component {
     });
   };
 
-  // logaut = (event) => {
+  // logout = (event) => {
   //   event.preventDefault();
 
   // };
 
-  logaut() {
+  logout() {
     const { isLogedIn } = this.state;
     this.setState({ isLogedIn: false });
   }
 
   render() {
-    const { hendelLogin, logaut } = this;
-    const { isLogedIn } = this.state;
+    const { handlerLogin, logout } = this;
+    const { isLogedIn,images } = this.state;
     return (
       <Fragment>
         {isLogedIn ? (
-          <Gallery logaut={logaut.bind(this)} />
+          <Gallery logout={logout.bind(this)} pictures={images} />
         ) : (
-          <form onSubmit={hendelLogin}>
+          <form onSubmit={handlerLogin}>
             <label htmlFor="name">Name: </label>
             <input
               id="name"
