@@ -31,7 +31,6 @@ class App extends Component {
   // };
 
   logout() {
-    const { isLogedIn } = this.state;
     this.setState({ isLogedIn: false });
   }
 
@@ -71,14 +70,14 @@ export const Marker = styled.div`
   height: 100px;
   color: blue;
   background-color: red; */
-  /* background-color: ${({ is }) => is ? "green" : "red" }; */
-   width: 50px;
-    height: 50px;
-    border-radius: 25px;
-    background-color: ${({ isDone }) => {
-    console.log(isDone)
-    return isDone ? "green" : "red"
+  /* background-color: ${({ is }) => (is ? 'green' : 'red')}; */
+  width: 50px;
+  height: 50px;
+  border-radius: 25px;
+  background-color: ${({ isDone }) => {
+    console.log(isDone);
+    return isDone ? 'green' : 'red';
   }};
-` 
+`;
 
 export default App;
